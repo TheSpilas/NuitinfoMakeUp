@@ -1,0 +1,76 @@
+:root {
+    --header-color: #090e1d;
+    --background-color: #ffffff;
+    --navbar-color: #1a274e;
+    --text-color: #fff;
+    --button-background: #1a274e;
+    --button-text-color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+html, body {
+    height: 100%;
+}
+
+.motto {
+    font-style: italic;
+    color: #f4f4f4;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: var(--navbar-color);
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1050;
+    padding: 1rem;
+}
+
+
+.sidebar .btn-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+.about, .principle {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+main {
+    flex-grow: 1;
+}
