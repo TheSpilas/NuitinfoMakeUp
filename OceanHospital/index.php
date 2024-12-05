@@ -14,6 +14,7 @@ include('includes/head.php');
 <header style="background-color: var(--header-color);" class="text-white py-3">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="logo">
+            <a href="index.php">Logo</a>
             <h1>Hospital Ocean</h1>
         </div>
         <div class="auth-buttons">
@@ -25,36 +26,34 @@ include('includes/head.php');
     
 </header>
     <main class="container my-5 flex-grow-1">
-        <nav class="navbar navbar-expand-md justify-content-center">
-        <div class="container">
-            <ul class="navbar-nav">
-                <li class="nav-item px-3">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                        <img src="assets/pixel-jeux.png" alt="Jeux" class="me-2" width="20">
-                        Jeux
-                    </a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                        <img src="assets/pixel-podcast.png" alt="Podcast" class="me-2" width="20">
-                        Podcast
-                    </a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                        <img src="assets/pixel-credit.png" alt="Crédit" class="me-2" width="20">
-                        Crédit
-                    </a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                        <img src="assets/pixel-classement.png" alt="Classement" class="me-2" width="20">
-                        Classement
-                    </a>
-                </li>
-            </ul>
-        </div>
-        </nav>
+        <nav class="navbar d-flex justify-content-center">
+        <ul class="d-flex flex-wrap justify-content-center list-unstyled gap-3">
+            <li class="nav-item">
+                <a class="nav-link text-white d-flex flex-column align-items-center p-3" href="#">
+                    <img src="assets/img/pixel-jeux.png" alt="Jeux" class="mb-2" width="40">
+                    <span>Jeux</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white d-flex flex-column align-items-center p-3" href="#">
+                    <img src="assets/img/pixel-podcast.png" alt="Podcast" class="mb-2" width="40">
+                    <span>Podcast</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white d-flex flex-column align-items-center p-3" href="#">
+                    <img src="assets/img/pixel-credit.png" alt="Crédit" class="mb-2" width="40">
+                    <span>Crédit</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white d-flex flex-column align-items-center p-3" href="#">
+                    <img src="assets/img/pixel-classement.png" alt="Classement" class="mb-2" width="40">
+                    <span>Classement</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
         <section class="about mb-4">
             <h1 class="text-center">Bienvenue sur Hospital Ocean</h1>
             <p class="text-center">Heal the Ocean : Un projet dédié à la sensibilisation et à l'action pour préserver nos océans.</p>
