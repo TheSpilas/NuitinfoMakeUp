@@ -15,7 +15,6 @@
         <img id="brain" title="Brain" class="organ" src="assets/img/brain-sick.png" data-part="brain" style="top: 10%; left: 32%; height: 22%;">
         <img id="fever" title="Fever" class="organ" src="assets/img/fever-sick.png" data-part="fever" style="top: 38%; left: 50%; height: 15%;">
         <img id="stomach" title="Stomach" class="organ" src="assets/img/stomach-sick.png" data-part="stomach" style="top: 65%; left: 40%; height: 10%;">
-    
     </div>
     
     <!-- Dynamic game interface -->

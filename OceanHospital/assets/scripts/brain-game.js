@@ -53,7 +53,7 @@
         const shuffledChain = [...chain].sort(() => Math.random() - 0.5); // Mélanger les éléments
 
         // Modifier l'arrière-plan uniquement pour la zone de jeu
-        gameContent.style.backgroundImage = "url('assets/img/backgr-game.gif')";
+        gameContent.style.backgroundImage = "url('assets/img/backgr-game-1.gif')";
         gameContent.style.backgroundSize = "cover";
         gameContent.style.backgroundPosition = "center";
 
