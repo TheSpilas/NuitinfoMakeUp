@@ -5,9 +5,11 @@ const closeGameButton = document.getElementById('close-game');
 
 // Statut des organes
 const bodyParts = {
-    head: false, // false = sick, true = healed
-    arm: false,
-    // Ajoutez d'autres organes ici
+    brain: false, // false = sick, true = healed
+    stomach: false,
+    fever: false,
+    lung: false,
+    
 };
 
 // Ajoute un écouteur d'événement pour chaque organe
@@ -25,11 +27,14 @@ function loadMiniGame(part, organ) {
     gameInterface.style.display = 'block';
     gameContent.innerHTML = `<p>Loading mini-game for ${part}...</p>`;
 
+    gameContent.style.backgroundImage = '';
+
     // Charge dynamiquement le fichier JavaScript spécifique
     const script = document.createElement('script');
     script.src = `assets/scripts/${part}-game.js`;
     script.onload = () => {
         console.log(`${part}-game.js loaded successfully`);
+        
     };
     script.onerror = () => {
         alert(`Failed to load the mini-game for ${part}.`);
@@ -45,7 +50,7 @@ function onMiniGameSuccess(part, organ) {
 
     // Met à jour l'état de l'organe
     bodyParts[part] = true;
-    organ.src = `${part}-healed.png`; // Change l'image en "healed"
+    organ.src = `img/${part}-healed.png`; // Change l'image en "healed"
 }
 
 // Bouton pour fermer le mini-jeu
