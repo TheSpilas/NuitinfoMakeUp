@@ -7,6 +7,7 @@ require('actions/auth/securityAction.php');
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +16,12 @@ require('actions/auth/securityAction.php');
 </head>
 <body>
     <div id="game-container">
-        <img id="character" src="assets/img/corps.png" alt="Character">
-        <img id="head" class="organ" src="head-sick.png" data-part="head" style="top: 10%; left: 40%; width: 25%; height: 15%;">
-        <img id="arm" class="organ" src="arm-sick.png" data-part="arm" style="top: 30%; left: 20%; width: 50%; height: 10%;">
+        <img id="character" src="assets/img/corps.png" alt="Character" width="550px" height="550px">
+        <img id="lung" title="Lung" class="organ" src="assets/img/lung-sick.png" data-part="lung" style="top: 35%; left: 40%; width: 25%; height: 15%;">
+        <img id="brain" title="Brain" class="organ" src="assets/img/brain-sick.png" data-part="brain" style="top: 10%; left: 20%; height: 10%;">
+        <img id="fever" title="Fever" class="organ" src="assets/img/fever-sick.png" data-part="fever" style="top: -5%; left: 20%; height: 10%;">
+        <img id="stomach" title="Stomach" class="organ" src="assets/img/stomach-sick.png" data-part="stomach" style="top: 50%; left: 20%; height: 10%;">
+    
     </div>
     
     <!-- Dynamic game interface -->
@@ -30,3 +34,4 @@ require('actions/auth/securityAction.php');
 </body>
 
 </html>
+
