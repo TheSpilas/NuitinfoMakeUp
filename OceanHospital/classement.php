@@ -34,8 +34,14 @@ include('includes/head.php');
             </a>
         </div>
         <div class="auth-buttons">
-            <a href="login.php" class="btn btn-outline-light me-2">Se connecter</a>
-            <a href="signup.php" class="btn btn-light">S'inscrire</a>
+        <?php if (!isset($_SESSION['auth']) || $_SESSION['auth'] === 'true'): ?>
+        <!-- Show login and signup buttons if the user is not logged in -->
+        <a href="login.php" class="btn btn-outline-light me-2">Se connecter</a>
+        <a href="signup.php" class="btn btn-light">S'inscrire</a>
+        <?php else: ?>
+        <!-- Optionally, show a logout button or a user profile link -->
+        <a href="actions/auth/logoutAction.php" class="btn btn-outline-light">Se déconnecter</a>
+        <?php endif; ?>
         </div>
     </div>
     <p class="motto text-center mb-3">Heal the Ocean</p>

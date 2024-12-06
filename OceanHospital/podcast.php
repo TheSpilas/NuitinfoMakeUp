@@ -1,6 +1,9 @@
 <?php
 include('includes/head.php');
 ?>
+<?php
+require('actions/database.php'); // Inclure votre fichier de connexion à la base de données
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,9 +42,15 @@ include('includes/head.php');
                 <h1>Hospital Ocean</h1>
             </a>
         </div>
-        <div class="auth-buttons text-center">
-            <a href="login.php" class="btn btn-outline-light me-2">Se connecter</a>
-            <a href="signup.php" class="btn btn-light">S'inscrire</a>
+        <div class="auth-buttons">
+        <?php if (!isset($_SESSION['auth']) || $_SESSION['auth'] === 'true'): ?>
+        <!-- Show login and signup buttons if the user is not logged in -->
+        <a href="login.php" class="btn btn-outline-light me-2">Se connecter</a>
+        <a href="signup.php" class="btn btn-light">S'inscrire</a>
+        <?php else: ?>
+        <!-- Optionally, show a logout button or a user profile link -->
+        <a href="actions/auth/logoutAction.php" class="btn btn-outline-light">Se déconnecter</a>
+        <?php endif; ?>
         </div>
     </div>
     <p class="motto text-center mb-3">Heal the Ocean</p>
