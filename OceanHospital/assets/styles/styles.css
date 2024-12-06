@@ -293,3 +293,48 @@ footer {
         font-size: 14px;
     }
 }
+
+
+/* Style pour le tableau du morpion */
+#game-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#morpion {
+    margin: 20px auto;
+}
+
+table {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+td {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#game-board td:hover {
+background-color: #f0f0f0;
+}
+
+#message {
+text-align: center;
+margin-top: 10px;
+font-size: 18px;
+}
+
+#captcha-error {
+color: red;
+display: none;
+}
+
+.hidden *{
+display: none;
+}
