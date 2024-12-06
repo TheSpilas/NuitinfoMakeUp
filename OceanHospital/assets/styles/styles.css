@@ -200,3 +200,21 @@ a {
 a:hover {
     text-decoration: underline;
 }
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: url('assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body, html {
+    background: url('assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
