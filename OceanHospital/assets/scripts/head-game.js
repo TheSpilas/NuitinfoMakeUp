@@ -27,20 +27,23 @@
     }
 
     function updateUserPoints(points) {
-        fetch('actions/updateGamePoints.php', { // Remplacez par le bon chemin
+        // Send a POST request to the server
+        fetch(window.location.href, { // Use the current PHP script
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `points=${points}` // Passez les points à ajouter
+            body: `points=${points}` // Pass the points to add
         })
-            .then(response => response.text())
-            .then(data => {
-                if (data === 'success') {
-                    console.log('Points mis à jour avec succès !');
-                } else {
-                    console.error('Erreur de mise à jour des points :', data);
-                }
-            })
-            .catch(error => console.error('Erreur lors de la requête :', error));
+        .then(response => response.text()) // Process the server's response
+        .then(data => {
+            console.log(data); // Debug: Log the response
+            if (data.includes('success')) {
+                console.log('Points successfully updated!');
+            } else {
+                console.error('Failed to update points:', data);
+            }
+        })
+        .catch(error => console.error('Error updating points:', error));
+                
     }
     
 

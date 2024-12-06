@@ -4,6 +4,7 @@ include('includes/head.php');
 require('actions/updateGamePoints.php'); 
 require('actions/auth/securityAction.php'); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
