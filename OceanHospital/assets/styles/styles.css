@@ -296,12 +296,7 @@ footer {
 
 
 /* Style pour le tableau du morpion */
-#game-board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 #morpion {
     margin: 20px auto;
@@ -320,9 +315,7 @@ td {
     font-weight: bold;
 }
 
-#game-board td:hover {
-background-color: #f0f0f0;
-}
+
 
 #message {
 text-align: center;
@@ -334,7 +327,9 @@ font-size: 18px;
 color: red;
 display: none;
 }
-
+.hidden {
+    display: none;
+}
 .hidden *{
 display: none;
 }
