@@ -141,6 +141,36 @@ include('includes/head.php');
             exploreTab.classList.remove('active');
         }
     }
+    let interval;
+        let storedLetters = ""; // Variable to store letters
+
+        function startRolling() {
+            const inputField = document.getElementById("inputField");
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let randomLetter;
+
+            // Start the random letter generation
+            interval = setInterval(() => {
+                randomLetter = letters.charAt(Math.floor(Math.random() * letters.length));
+                inputField.value = randomLetter;
+            }, 100); // Change letter every 100 ms
+
+            // Stop after a delay
+            setTimeout(() => {
+                clearInterval(interval);
+                storedLetters += randomLetter; // Add the letter to the storage
+                updateStoredLetters();
+            }, 3000); // Stop after 3 seconds
+        }
+
+        function eraseLetter() {
+            storedLetters = storedLetters.slice(0, -1); // Remove last letter
+            updateStoredLetters();
+        }
+
+        function updateStoredLetters() {
+            document.getElementById("storedLetters").value = storedLetters;
+        }
 </script>
 </body>
 </html>
