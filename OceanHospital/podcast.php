@@ -14,6 +14,21 @@ include('includes/head.php');
             background-color: #007bff;
             color: white;
         }
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-check-inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .small-video {
+            max-width: 100%;
+            max-height: 300px;
+        }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -37,7 +52,8 @@ include('includes/head.php');
             <ul class="list-group" id="podcast-list">
                 <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Frederic Le Moigne', 'assets/img/podcast1.jpeg', 'assets/audio/podcast1.mp3')">Podcast avec Frederic Le Moigne</li>
                 <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Florian Sevellec', 'assets/img/podcast2.jpeg', 'assets/audio/podcast2.mp3')">Podcast avec Florian Sevellec</li>
-                <!-- Ajoutez plus de podcasts ici -->
+                <li class="list-group-item list-group-item-action" onclick="showActivationForm()">Activer Podcast avec Oussama</li>
+                <li class="list-group-item list-group-item-action disabled" id="podcast-oussama" onclick="showPodcast(this, 'Podcast avec Oussama', 'assets/img/podcast3.mp4')">Podcast avec Oussama</li>
             </ul>
         </div>
         <div class="col-md-8">
@@ -48,6 +64,76 @@ include('includes/head.php');
                     <source id="podcast-source" src="" type="audio/mpeg">
                     Votre navigateur ne supporte pas l'élément audio.
                 </audio>
+                <video id="podcast-video" class="plyr small-video" controls style="display: none;">
+                    <source id="video-source" src="" type="video/mp4">
+                    Votre navigateur ne supporte pas l'élément vidéo.
+                </video>
+                <div id="activation-form" class="hidden">
+                    <h4>Activer Podcast avec Oussama</h4>
+                    <form class="text-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check1">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check2">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check3">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check4">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check5">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check6">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check7">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check8">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check9">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check10">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check11">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check12">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check13">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check14">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check15">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check16">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check17">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check18">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check19">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check20">
+                        </div>
+                        <button type="button" class="btn btn-primary mt-3" onclick="checkActivation()">Activer</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -61,11 +147,13 @@ include('includes/head.php');
 <script>
     const players = Plyr.setup('.plyr');
 
-    function showPodcast(element, title, imageSrc, audioSrc) {
+    function showPodcast(element, title, mediaSrc) {
         const podcastTitle = document.getElementById('podcast-title');
         const podcastImage = document.getElementById('podcast-image');
         const podcastAudio = document.getElementById('podcast-audio');
         const podcastSource = document.getElementById('podcast-source');
+        const podcastVideo = document.getElementById('podcast-video');
+        const videoSource = document.getElementById('video-source');
         const podcastListItems = document.querySelectorAll('#podcast-list .list-group-item');
 
         // Retirer la classe active de tous les éléments de la liste
@@ -76,14 +164,51 @@ include('includes/head.php');
 
         // Mettre à jour le contenu
         podcastTitle.innerText = title;
-        podcastImage.src = imageSrc;
-        podcastSource.src = audioSrc;
-        podcastAudio.load();
 
-        // Afficher les éléments
-        podcastImage.style.display = 'block';
-        podcastAudio.style.display = 'block';
+        if (title === 'Podcast avec Oussama') {
+            podcastImage.style.display = 'none';
+            podcastAudio.style.display = 'none';
+            podcastVideo.style.display = 'block';
+            videoSource.src = mediaSrc;
+            podcastVideo.load();
+        } else {
+            podcastImage.src = mediaSrc;
+            podcastSource.src = mediaSrc;
+            podcastAudio.load();
+            podcastImage.style.display = 'block';
+            podcastAudio.style.display = 'block';
+            podcastVideo.style.display = 'none';
+        }
+
+        // Cacher le formulaire d'activation
+        document.getElementById('activation-form').classList.add('hidden');
     }
+
+    function showActivationForm() {
+        document.getElementById('activation-form').classList.remove('hidden');
+    }
+
+    function checkActivation() {
+        const checkboxes = document.querySelectorAll('#activation-form .form-check-input');
+        const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+        if (allChecked) {
+            localStorage.setItem('podcastOussamaActivated', 'true');
+            alert('Podcast avec Oussama activé !');
+            document.getElementById('podcast-oussama').classList.remove('disabled');
+            document.getElementById('activation-form').classList.add('hidden');
+        } else {
+            alert('Veuillez cocher toutes les options pour activer le podcast.');
+        }
+    }
+
+    // Vérifier si le podcast Oussama est activé
+    document.addEventListener('DOMContentLoaded', function() {
+        const podcastOussama = document.getElementById('podcast-oussama');
+        if (localStorage.getItem('podcastOussamaActivated') !== 'true') {
+            podcastOussama.classList.add('disabled');
+        }
+    });
 </script>
 <script src="assets/scripts/script.js"></script>
 </body>
