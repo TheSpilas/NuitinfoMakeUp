@@ -29,7 +29,7 @@ include('includes/head.php');
         <nav class="navbar d-flex justify-content-center">
         <ul class="d-flex flex-wrap justify-content-center list-unstyled gap-3">
             <li class="nav-item">
-                <a class="nav-link text-white d-flex flex-column align-items-center p-3" href="#">
+                <a class="nav-link text-white d-flex flex-column align-items-center p-3" href="game.php">
                     <img src="assets/img/pixel-jeux.png" alt="Jeux" class="mb-2" width="40">
                     <span>Jeux</span>
                 </a>
