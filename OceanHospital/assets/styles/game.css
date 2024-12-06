@@ -8,11 +8,15 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
+    background-color: #87CEEB;
+    color: #fff;
 }
+
 
 html, body {
     height: 100%;
@@ -126,14 +130,6 @@ main {
 }
 
 
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-}
-
 header {
     background-color: var(--header-color);
 }
@@ -201,15 +197,6 @@ a:hover {
     text-decoration: underline;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #fff;
-    color: #fff;
-}
 
 #game-container {
     position: relative;
@@ -218,7 +205,8 @@ body {
 }
 
 #character {
-    width: 100%;
+    width: 150%;
+    margin-left: -28%;
     height: auto;
 }
 
@@ -233,10 +221,11 @@ body {
 .organ {
     position: absolute;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)); /* Lueur respectant les contours */
 }
 
 .organ:hover {
-    transform: scale(1.1); /* Animation au survol */
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); /* Lueur plus intense au survol */
 }
-

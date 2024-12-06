@@ -27,6 +27,8 @@ function loadMiniGame(part, organ) {
     gameInterface.style.display = 'block';
     gameContent.innerHTML = `<p>Loading mini-game for ${part}...</p>`;
 
+    gameContent.style.backgroundImage = '';
+
     // Charge dynamiquement le fichier JavaScript spécifique
     const script = document.createElement('script');
     script.src = `assets/scripts/${part}-game.js`;

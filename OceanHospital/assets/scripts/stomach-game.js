@@ -14,12 +14,12 @@
         type();
     }
 
-    gameContent.style.backgroundColor = 'aquamarine';
+    gameContent.style.backgroundColor = '#87CEEB';
 
     // Add the game content
     gameContent.innerHTML = `
         <h2 style="margin: 20px 20px; padding: 5px 0; color: #333;">Bienvenue au jeu de la Pollution Marine</h2>
-        <p id="task-text" style="margin: 20px 0; padding: 10px; font-size: 18px; color: #555; background-color: #fff;"></p>
+        <p id="task-text" style="margin: 20px 0; padding: 10px; font-size: 18px; color: #555; background-color: #87CEEB;"></p>
         <button id="change-bg-btn" style="
             margin: 30px 40px;
             width: 200px;
@@ -139,7 +139,7 @@
         function win(){
             const gameContent = document.getElementById('game-content');
             gameContent.style.backgroundImage = ''; // Remove the background
-            gameContent.innerHTML = '<h1 style="text-align: center; margin-top: 100px;">Vous avez gagné 100 points! 🎉</h1>';
+            gameContent.innerHTML = '<h1 style="text-align: center">Vous avez gagné 100 points! 🎉</h1>';
         
             // Update the user's game_points in the database
             updateUserPoints(100); // Call the function to add 100 points

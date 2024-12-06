@@ -111,11 +111,12 @@
                     displayMessage('Bravo ! Niveau suivant en cours...', true);
                     setTimeout(loadLevel, 2000); // Charger le prochain niveau après 2 secondes
                 } else {
-                    displayMessage('Félicitations ! Vous avez gagné 500 points ! 🎉', true);
-                    updateUserPoints(500); // Ajouter 500 points à l'utilisateur
-                    setTimeout(() => {
-                        gameInterface.style.display = 'none'; // Fermer la fenêtre de jeu
-                    }, 3000); // Attendre 3 secondes avant de fermer
+                    bodyParts.brain= true;
+                    const organImage = document.querySelector(`.organ[data-part="brain"]`);
+                    if (organImage) {
+                        organImage.src = `assets/img/brain-healed.png`; 
+                    }
+                    win();
                 }
             } else {
                 displayMessage('Désolé, l\'ordre est incorrect. Réessayez !', false);
@@ -124,6 +125,20 @@
                 draggables.forEach((item) => dropZone.appendChild(item)); // Remettre les éléments dans le conteneur
             }
         });
+    }
+
+    function win(){
+        const gameContent = document.getElementById('game-content');
+        gameContent.style.backgroundImage = ''; // Remove the background
+        gameContent.innerHTML = '<h1 style="text-align: center">Vous avez gagné 500 points! 🎉</h1>';
+    
+        // Update the user's game_points in the database
+        updateUserPoints(500); // Call the function to add 100 points
+        bodyParts.brain= true;
+        const organImage = document.querySelector(`.organ[data-part="brain"]`);
+        if (organImage) {
+            organImage.src = `assets/img/brain-healed.png`; 
+        }
     }
 
     // Introduction et bouton pour démarrer
