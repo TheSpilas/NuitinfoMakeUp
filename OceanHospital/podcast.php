@@ -34,10 +34,9 @@ include('includes/head.php');
 <body class="d-flex flex-column min-vh-100">
 <header style="background-color: var(--header-color);" class="text-white py-3">
     <div class="container d-flex justify-content-between align-items-center">
-        <div class="logo">
-            <a href="index.php" class="text-white text-decoration-none">
-                <h1>Hospital Ocean</h1>
-            </a>
+        <div class="logo text-center">
+            <a href="index.php">Logo</a>
+            <h1>Hospital Ocean</h1>
         </div>
         <div class="auth-buttons text-center">
             <a href="login.php" class="btn btn-outline-light me-2">Se connecter</a>
@@ -53,7 +52,8 @@ include('includes/head.php');
                 <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Frederic Le Moigne', 'assets/img/podcast1.jpeg', 'assets/audio/podcast1.mp3')">Podcast avec Frederic Le Moigne</li>
                 <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Florian Sevellec', 'assets/img/podcast2.jpeg', 'assets/audio/podcast2.mp3')">Podcast avec Florian Sevellec</li>
                 <li class="list-group-item list-group-item-action" onclick="showActivationForm()">Activer Podcast avec Oussama</li>
-                <li class="list-group-item list-group-item-action disabled" id="podcast-oussama" onclick="showPodcast(this, 'Podcast avec Oussama', 'assets/img/podcast3.mp4')">Podcast avec Oussama</li>
+                <li class="list-group-item list-group-item-action disabled" id="podcast-oussama" onclick="showPodcast(this, 'Podcast avec Oussama', 'assets/video/podcast3.mp4')">Podcast avec Oussama</li>
+                <!-- Ajoutez plus de podcasts ici -->
             </ul>
         </div>
         <div class="col-md-8">
@@ -147,7 +147,7 @@ include('includes/head.php');
 <script>
     const players = Plyr.setup('.plyr');
 
-    function showPodcast(element, title, mediaSrc) {
+    function showPodcast(element, title, imageSrc, mediaSrc) {
         const podcastTitle = document.getElementById('podcast-title');
         const podcastImage = document.getElementById('podcast-image');
         const podcastAudio = document.getElementById('podcast-audio');
@@ -165,14 +165,14 @@ include('includes/head.php');
         // Mettre à jour le contenu
         podcastTitle.innerText = title;
 
-        if (title === 'Podcast avec Oussama') {
+        if (mediaSrc.endsWith('.mp4')) {
             podcastImage.style.display = 'none';
             podcastAudio.style.display = 'none';
             podcastVideo.style.display = 'block';
             videoSource.src = mediaSrc;
             podcastVideo.load();
         } else {
-            podcastImage.src = mediaSrc;
+            podcastImage.src = imageSrc;
             podcastSource.src = mediaSrc;
             podcastAudio.load();
             podcastImage.style.display = 'block';
@@ -191,7 +191,6 @@ include('includes/head.php');
     function checkActivation() {
         const checkboxes = document.querySelectorAll('#activation-form .form-check-input');
         const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
-
         if (allChecked) {
             localStorage.setItem('podcastOussamaActivated', 'true');
             alert('Podcast avec Oussama activé !');
