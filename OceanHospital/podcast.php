@@ -34,8 +34,8 @@ include('includes/head.php');
     <div class="row">
         <div class="col-md-4">
             <ul class="list-group" id="podcast-list">
-                <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Frederic Le Moigne', 'assets/image/podcast1.jpeg', 'assets/audio/podcast1.mp3')">Podcast avec Frederic Le Moigne</li>
-                <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Florian Sevellec', 'assets/image/podcast2.jpeg', 'assets/audio/podcast2.mp3')">Podcast avec Florian Sevellec</li>
+                <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Frederic Le Moigne', 'assets/img/podcast1.jpeg', 'assets/audio/podcast1.mp3')">Podcast avec Frederic Le Moigne</li>
+                <li class="list-group-item list-group-item-action" onclick="showPodcast(this, 'Podcast avec Florian Sevellec', 'assets/img/podcast2.jpeg', 'assets/audio/podcast2.mp3')">Podcast avec Florian Sevellec</li>
                 <!-- Ajoutez plus de podcasts ici -->
             </ul>
         </div>
