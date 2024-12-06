@@ -119,6 +119,21 @@ require('actions/database.php'); // Inclure votre fichier de connexion à la bas
         .end-space {
             height: 50px;
         }
+
+                /* Animation de tremblement */
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        50% { transform: translateX(10px); }
+        75% { transform: translateX(-10px); }
+        100% { transform: translateX(0); }
+    }
+    
+    /* Application de l'animation au survol des images */
+    .image-grid img:hover {
+        animation: shake 0.5s ease-in-out;
+        animation-iteration-count: infinite; /* L'animation tremble en boucle */
+    }
     </style>
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
