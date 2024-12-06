@@ -7,109 +7,33 @@
     --button-text-color: #fff;
 }
 
-body {
-    font-family: Arial, sans-serif;
+/* Styles globaux */
+body, html {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-}
-
-html, body {
     height: 100%;
+    font-family: Arial, sans-serif;
+    background: url('../../assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
+
+/* Texte du motto */
 .motto {
     font-style: italic;
     color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: var(--header-color);
+    color: var(--text-color);
 }
 
 header .logo h1 {
     margin: 0;
     font-size: 2rem;
 }
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100%;
-    background-color: var(--navbar-color);
-    overflow-y: auto;
-    transition: right 0.3s ease;
-    z-index: 1050;
-    padding: 1rem;
-}
-
-
-.sidebar .btn-close {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.navbar {
-    margin-top: 20px;
-}
-
-.nav-item {
-    border: 2px solid var(--text-color);
-    border-radius: 12px; /* Ajout de coins arrondis */
-    background-color: var(--navbar-color);
-    padding: 10px;
-    width: 120px;
-    text-align: center;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.nav-item:hover {
-    background-color: var(--header-color);
-    transform: scale(1.05);
-    border-radius: 15px; /* Effet d'arrondi supplémentaire au survol */
-}
-
-
-.nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-link img {
-    margin-bottom: 10px;
-}
-
-.navbar ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-
-
-
-#sidebar.active {
-    right: 0;
-}
-
-.about, .principle {
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-main {
-    flex-grow: 1;
-}
-
 
 .auth-buttons {
     display: flex;
@@ -125,96 +49,247 @@ main {
     border-radius: 5px;
 }
 
-
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: var(--header-color);
-}
-
-.motto {
-    font-style: italic;
-    color: #f4f4f4;
-}
-
-.login-form-container {
-    max-width: 400px;
-    width: 100%;
-    background-color: var(--background-color);
-    border: 2px solid var(--navbar-color);
-    border-radius: 12px;
-}
-
-.login-form-container h2 {
-    color: var(--header-color);
-}
-
-.btn-primary {
-    background-color: var(--navbar-color);
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: var(--header-color);
-}
-
-a {
-    color: var(--navbar-color);
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.signup-form-container {
-    max-width: 400px;
-    width: 100%;
-    background-color: var(--background-color);
-    border: 2px solid var(--navbar-color);
-    border-radius: 12px;
-}
-
-.signup-form-container h2 {
-    color: var(--header-color);
-}
-
-.btn-primary {
-    background-color: var(--navbar-color);
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: var(--header-color);
-}
-
-a {
-    color: var(--navbar-color);
-}
-
-a:hover {
-    text-decoration: underline;
-}
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: url('assets/img/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
+/* Main */
 main {
-    background: rgba(255, 255, 255, 0.8);
+    flex-grow: 1;
     padding: 20px;
-    border-radius: 10px;
+    background: transparent;
+    color: white;
 }
 
-body, html {
-    background: url('assets/img/background.jpg') no-repeat center center fixed;
-    background-size: cover;
+/* Sections */
+.about, .principle {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Sidebar (si utilisé) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: var(--navbar-color);
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1050;
+    padding: 1rem;
+}
+
+.sidebar .btn-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+/* Formulaires de connexion et inscription */
+.login-form-container, .signup-form-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: var(--background-color);
+    border: 2px solid var(--navbar-color);
+    border-radius: 12px;
+}
+
+.login-form-container h2, .signup-form-container h2 {
+    color: var(--header-color);
+}
+
+.btn-primary {
+    background-color: var(--navbar-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--header-color);
+}
+
+a {
+    color: var(--navbar-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+        /* Styles pour les bulles */
+        .nav-item a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            width: 220px;
+            height: 220px;
+            background: url('../../assets/img/bubble.png') no-repeat center center;
+            background-size: contain;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-item a:hover {
+            transform: scale(1.1); /* Agrandir légèrement au survol */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Effet lumineux */
+        }
+
+        .nav-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+
+        .nav-item span {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Aligner les bulles au centre */
+        .navbar ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+.my-5 {
+    margin-top: 0.5rem!important;
+}
+
+
+.container2 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    flex-grow: 1; /* Pour que le contenu occupe l'espace restant */
+}
+
+footer {
+    background-color: #090e1d;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Pousse le footer en bas */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .container2 {
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+/* Titres principaux */
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Onglets */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    background: #1a274e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.tabs button:hover,
+.tabs button.active {
+    background: #090e1d;
+    transform: scale(1.05); /* Légère mise en avant au survol */
+}
+
+/* Tableaux */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #1a274e;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase; /* Texte des entêtes en majuscules */
+}
+
+table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #eee; /* Couleur du texte des cellules */
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+table tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background 0.2s ease;
+}
+
+/* Classement Explore masqué par défaut */
+#explore-ranking {
+    display: none; 
+}
+
+/* Style spécifique pour le footer */
+footer {
+    background-color: #090e1d;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container2 {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .tabs button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        font-size: 14px;
+    }
 }

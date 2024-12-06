@@ -19,9 +19,10 @@ include('includes/head.php');
 <body class="d-flex flex-column min-vh-100">
 <header style="background-color: var(--header-color);" class="text-white py-3">
     <div class="container d-flex justify-content-between align-items-center">
-        <div class="logo text-center">
-            <a href="index.php">Logo</a>
-            <h1>Hospital Ocean</h1>
+        <div class="logo">
+            <a href="index.php" class="text-white text-decoration-none">
+                <h1>Hospital Ocean</h1>
+            </a>
         </div>
         <div class="auth-buttons text-center">
             <a href="login.php" class="btn btn-outline-light me-2">Se connecter</a>
