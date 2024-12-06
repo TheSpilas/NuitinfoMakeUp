@@ -39,6 +39,7 @@ body::before {
 header {
     background-color: var(--header-color);
     color: var(--text-color);
+    position: relative;
 }
 
 
